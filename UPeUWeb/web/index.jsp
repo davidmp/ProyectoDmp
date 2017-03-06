@@ -23,7 +23,7 @@
             <a href="main.jsp" target="" > Ver reporte Persona</a> <br> 
             <a href="FormPersona.jsp" > Crear Persona</a>  
             
-
+            <h6>Holas</h6>
  
             
         </div>
