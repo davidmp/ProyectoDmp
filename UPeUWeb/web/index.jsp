@@ -24,6 +24,7 @@
             <a href="FormPersona.jsp" > Crear Persona</a>  
             
             <h6>Holas</h6>
+            <h6>Holas</h6>
  
             
         </div>
