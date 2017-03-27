@@ -20,4 +20,43 @@ body{
         background: #FAE8C5 url('../imagen/img/editar.gif') no-repeat top left ;
         padding-left: 20px;
     }
+    div{
+        color: blue;
+    }
+    
+    .dmp{
+        font-size: 18px; 
+    }
+    
+    button{
+        background: url('../imagen/img/carrito.gif') no-repeat top left ;
+        padding-left: 26px;
+        box-shadow: 0 0 10px 5px black, -20px 0px 50px blue;
+        margin-left: 20px;
+        border: solid 1px #8AB134;
+        font-weight: bold;
+    }
+}
+
+#Messages{
+    color:blue;
+    font-size:18px;
+    p{
+       padding: 20px;
+       font-family: monospace;
+       background-color: bisque;
+       b{
+           color: red;
+       }
+    }
+}
+
+.dmp{
+    background-color: aquamarine;
+    margin-top: 30px;
+    p{
+        b{
+           font-family: Verdana, sans-serif; 
+        }
+    }
 }

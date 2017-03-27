@@ -33,8 +33,8 @@ and open the template in the editor.
         socket.on("mensaje_servidor", function (message) {
                 var str = message;
                 var res = str.split("*");             
-            document.getElementById("Messages").innerHTML += "<b>Usuario:</b>"+res[0]+"\n\
-                    <b>Mensaje:</b>"+res[1]+ "<br />";
+            document.getElementById("Messages").innerHTML += "<p><b>Usuario:</b>"+res[0]+"\n\
+                    <b>Mensaje:</b>"+res[1]+ "<br /></p>";
         });
         document.getElementById("Send").addEventListener("click", function () {
             socket.emit("mensaje_cliente", document.getElementById("MessageU").value+"*"
