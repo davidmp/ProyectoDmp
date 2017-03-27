@@ -1,0 +1,12 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*  Created on : 27/03/2017, 08:28:27 AM Author     : Alumnos
+*/
+body { font-weight: bold; }
+body #Send { font-size: 20px; }
+body input { color: darkcyan; font-size: 20px; background: #FAE8C5 url("../imagen/img/editar.gif") no-repeat top left; padding-left: 20px; }
+
+/*# sourceMappingURL=sass.css.map */

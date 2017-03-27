@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/sass.css" />
+    <style type="text/css">
+     /*Selector Etiqueta / nombre del Elemento */   
+     div{
+         background-color: chartreuse;
+     }   
+
+    </style>
+</head>
+<body>
+   Usuario:<input id="MessageU" type="text" name="name1" value=""/>
+   Mensaje:<input id="MessageM" type="text" name="name" value=""/>
+    <button type="button" id="Send">Enviar</button><br/>
+    <div id="Messages" class="dmp" ></div>
+    <script src="http://172.22.90.15:3000/socket.io/socket.io.js"></script>
+    
+    <script type="text/javascript">
+        socket = io.connect("http://172.22.90.15:3000");
+        socket.on("connect", function () {
+            console.log("Conectado");
+        });
+        socket.on("mensaje_servidor", function (message) {
+                var str = message;
+                var res = str.split("*");             
+            document.getElementById("Messages").innerHTML += "<b>Usuario:</b>"+res[0]+"\n\
+                    <b>Mensaje:</b>"+res[1]+ "<br />";
+        });
+        document.getElementById("Send").addEventListener("click", function () {
+            socket.emit("mensaje_cliente", document.getElementById("MessageU").value+"*"
+                    +document.getElementById("MessageM").value);
+        });
+    </script>
+</body>
+</html>

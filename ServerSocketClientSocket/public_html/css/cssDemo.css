@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24/03/2017, 12:53:29 PM
+    Author     : Alumnos
+*/
+
+
+
+     /*Selector id */   
+     #Send{
+         font-size: 20px;
+     }
+     
+     #Messages{
+         color: blue;         
+     }
+     
+     /*Selector class */   
+     
+     .dmp{
+         background-color: aquamarine;
+         font-size: x-small;
+         font-family: cursive;
+         margin-top: 45px;
+         color: black;//coje de la anterior
+     }
+     
