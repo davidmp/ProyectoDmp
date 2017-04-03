@@ -27,10 +27,11 @@
       var vector=[7,8,9,12];
       console.log("La suma del vector es:"+sumavertor2(vector));
       operacionesConCadena();
-    };
-    
-//    retornarEdad(15);
-    
+      operacioneConCadenaDos();
+      
+      operacionUsoSwitch(prompt('Ingrese Nombre:',''), prompt('Ingrese el Nivel de Estudio:',''));
+    };    
+//    retornarEdad(15);    
     function retornarEdad(edad){
         if(edad<12){
             alert("Todavia eres muy pequeño!");
@@ -140,6 +141,28 @@
         var porcion = mensaje.substring(5, 0); // porcion = "Hola "
         console.log("Muestra cadena entre las posiciones indicadas (pero al reves): "+ porcion);         
         porcion = mensaje.substring(0, 5); // porcion = "Hola "       
+   };
+   
+   var operacionUsoSwitch=function (nombre, nivelEstudio){
+       
+        switch(nivelEstudio){
+           case 1: 
+            console.log(nombre+ " tiene el nivel de estudios de Inicial");
+            break;
+           case 2: 
+            console.log(nombre+ " tiene el nivel de estudios de Primaria");
+            break;
+           case 3: 
+            console.log(nombre+ " tiene el nivel de estudios de Secundaria");
+            break;
+           case 4: 
+            console.log(nombre+ " tiene el nivel de estudios de Universitario");
+            break;
+           default : 
+           console.log("Valor incorrecto");
+           break;
+       }
+       
    };
    
   </script>
