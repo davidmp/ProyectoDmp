@@ -24,7 +24,8 @@
       //  retornarEdad(edad);
       alert(retornarEdad(edad)); 
       operacione();
-      console.log("La suma del vector es:"+sumavertor());
+      var vector=[7,8,9,12];
+      console.log("La suma del vector es:"+sumavertor2(vector));
     }
     
 //    retornarEdad(15);
@@ -80,6 +81,13 @@
         return resultado;
     };
       
+    var sumavertor2=function (vector){
+        var resultado=0;        
+        for(i=0;i<vector.length;i++){
+            resultado+=vector[i];
+        }
+        return resultado;
+    };      
       
   </script>
   <style>
