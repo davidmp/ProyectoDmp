@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>UPeU - Clases Lenguaje de Programaci&oacute;n</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../css/style.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="../css/coin-tap-game.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+            
+      window.onload = function(e) {
+                console.log("Se ejecuto esta Sentencia DMP");
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.font = "30px Arial";
+            ctx.strokeText("Hello UPeU",10,50); 
+            
+            
+            
+            };
+            
+    var sun = new Image();
+    var moon = new Image();
+    var earth = new Image();
+    function init() {
+      sun.src = '../imagen/canvas/Canvas_sun.png';
+      moon.src = '../imagen/canvas/Canvas_moon.png';
+      earth.src = '../imagen/canvas/Canvas_earth.png';
+      window.requestAnimationFrame(draw);
+    }
+
+    function draw() {
+      var ctx = document.getElementById('canvas').getContext('2d');
+
+      ctx.globalCompositeOperation = 'destination-over';
+      ctx.clearRect(0, 0, 300, 400); // clear canvas
+
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+      ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
+      ctx.save();
+      ctx.translate(150, 150);
+
+      // Earth
+      var time = new Date();
+      ctx.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
+      ctx.translate(105, 0);
+      ctx.fillRect(0, -12, 50, 24); // Shadow
+      ctx.drawImage(earth, -12, -12);
+
+      // Moon
+      ctx.save();
+      ctx.rotate(((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds());
+      ctx.translate(0, 28.5);
+      ctx.drawImage(moon, -3.5, -3.5);
+      ctx.restore();
+
+      ctx.restore();
+
+      ctx.beginPath();
+      ctx.arc(150, 150, 105, 0, Math.PI * 2, false); // Earth orbit
+      ctx.stroke();
+
+      ctx.drawImage(sun, 0, 0, 300, 300);
+
+      window.requestAnimationFrame(draw);
+    }
+
+        init();  
+        </script>
+    </head>
+
+    <body class="body">
+
+        <header class="mainHeader">
+            <img src="../imagen/logosistemas.png">        
+            <nav>
+                <ul>
+                    <li class="active"><a href="../index.html">Home</a></li>
+                    <li><a href="#">Formularios</a></li>
+                    <li><a href="multimedia.html">Multimedia</a></li>                    
+                    <li><a href="imagensvg.html">Graficos y Efectos</a></li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <div class="mainContent">
+            <div class="content">
+                <article class="topcontent">
+                    <header>
+                        <h2><a href="#" class="titulo">Ejemplo de Imagenes SVG</a></h2>
+                    </header>
+
+                    <footer>
+                        <p class="post-info">Imagenes Vectorizadas</p>
+                    </footer>
+
+                    <content>
+                        
+                        <div style=" height: 300px">
+                            <img src="../imagen/svg/logoX.svg"  alt="Logo"/>    
+                        <img src="../imagen/svg/logoHTML5.svg" alt="Logo"/>    
+                        </div>    
+                        
+                        
+                        
+                    </content>
+                </article>
+
+                <section> 
+                        <article class="topcontent">
+                            <header>
+                                <h2><a href="#" class="titulo">Canvas</a></h2>
+                            </header>
+
+                            <footer>
+                                <p class="post-info">Un Juego en Canvas</p>
+                            </footer>
+
+                            <content>
+                                <div id="coinTapGameContainer">
+                                <div id="score">0</div>
+                                        <canvas id="coinTapGame"></canvas>
+                                        
+                                </div>  
+
+                            </content>
+                        </article>
+
+                </section>  
+                <section> 
+                        <article class="topcontent">
+                            <header>
+                                <h2><a href="#" class="titulo">Canvas</a></h2>
+                            </header>
+                            <content>
+                                <center>
+                                <div>
+                                    <canvas id="canvas"  </canvas>
+                                </div>
+                                </center>
+                            </content>
+                        </article>
+
+                </section>                 
+            </div>
+
+           
+            
+        </div>
+
+        <aside class="top-sidebar">
+            <article>
+                <h2>Canvas</h2>
+                <p>
+                    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+                    </canvas>
+                </p>
+            </article>
+        </aside>
+        <aside class="top-sidebar">
+            <article>
+                <h2>Imagen SVG</h2>
+                <svg width="300" height="200">
+                    <polygon points="100,10 40,198 190,78 10,78 160,198"
+                    style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+                </svg>             
+            </article>
+        </aside>
+
+        <footer class="mainFooter">
+            <p>Copyright &copy; 2017 <a href="#">UPeU - Juliaca - LP-I</a>
+        </footer>
+
+        <script src="../js/canvas/coin-tap-game.js"></script>
+    </body>
+</html>
