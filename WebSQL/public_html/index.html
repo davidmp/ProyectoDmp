@@ -26,7 +26,8 @@
       operacione();
       var vector=[7,8,9,12];
       console.log("La suma del vector es:"+sumavertor2(vector));
-    }
+      operacionesConCadena();
+    };
     
 //    retornarEdad(15);
     
@@ -109,6 +110,38 @@
         console.log("Convierte mensaje en Mayuscula:"+ mensaje2);               
    }   
       
+   var operacioneConCadenaDos=function (){
+        var mensaje1 = "HolA";
+        var mensaje2 = mensaje1.toLowerCase(); // mensaje2 = "hola“
+        console.log("Convierte mensaje en minuscula:"+ mensaje2); 
+        var mensaje = "Hola";
+        var letra = mensaje.charAt(0); // letra = H
+        console.log("Extrae la caracter de la posición indicada:"+ letra); 
+        letra = mensaje.charAt(2); // letra = l
+        console.log("Extrae la caracter de la posición indicada:"+ letra); 
+        var mensaje = "Hola";
+        var posicion = mensaje.indexOf('a'); // posicion = 3
+        console.log("Indica la posición en la que esta ubicada: "+ posicion); 
+        posicion = mensaje.indexOf('b'); // posicion = -1
+        console.log("Indica la posición en la que esta ubicada (No existe): "+ posicion);         
+        var mensaje = "Hola Mundo";
+        var porcion = mensaje.substring(2); // porcion = "la Mundo"
+        console.log("Muestra cadena a partir de la posición indicada: "+ porcion);         
+        porcion = mensaje.substring(5); // porcion = "Mundo"
+        porcion = mensaje.substring(7); // porcion = "ndo“        
+        var mensaje = "Hola Mundo";
+        var porcion = mensaje.substring(-2); // porcion = "Hola Mundo“
+        console.log("Muestra cadena a partir de la posición indicada (Posición no existente): "+ porcion);         
+        var mensaje = "Hola Mundo";
+        var porcion = mensaje.substring(1, 8); // porcion = "ola Mun"
+        console.log("Muestra cadena entre las posiciones indicadas: "+ porcion);         
+        porcion = mensaje.substring(3, 4); // porcion = "a“        
+        var mensaje = "Hola Mundo";
+        var porcion = mensaje.substring(5, 0); // porcion = "Hola "
+        console.log("Muestra cadena entre las posiciones indicadas (pero al reves): "+ porcion);         
+        porcion = mensaje.substring(0, 5); // porcion = "Hola "       
+   };
+   
   </script>
   <style>
     div {
