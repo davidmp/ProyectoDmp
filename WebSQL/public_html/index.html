@@ -14,6 +14,7 @@
   <title>WebSQL</title>
 
   <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="js/operacionesjs.js"></script>
   <script type="text/javascript">
       
 //    alert("Hola Mundo");
@@ -31,140 +32,8 @@
       
       operacionUsoSwitch(prompt('Ingrese Nombre:',''), prompt('Ingrese el Nivel de Estudio:',''));
     };    
-//    retornarEdad(15);    
-    function retornarEdad(edad){
-        if(edad<12){
-            alert("Todavia eres muy pequeño!");
-        }else if(edad<19){
-            alert("Eres un adolecente!");
-        }else if(edad<35){
-            alert("Aun sigues siendo Joven!");
-        }else{
-            alert("Piensa en cuidarte mas!");
-        }
-    }
     
-    function operacione(){
-        var numero1 = 5;
-        numero1 += 3; // numero1 = numero1 + 3 = 8
-        console.log(numero1);
-        numero1 -= 1; // numero1 = numero1 - 1 = 4
-        console.log(numero1);
-        numero1 *= 2; // numero1 = numero1 * 2 = 10
-        console.log(numero1);
-        numero1 /= 5; // numero1 = numero1 / 5 = 1
-        console.log(numero1);
-        numero1 %= 4; // numero1 = numero1 % 4 = 1
-        console.log(numero1);
-        
-    }
     
-    var resultado="";
-    function retornarEdad(edad){
-        if(edad<12){
-           resultado="Todavia eres muy pequeño!";
-        }else if(edad<19){
-            resultado="Eres un adolecente!";
-        }else if(edad<35){
-            resultado="Aun sigues siendo Joven!";
-        }else{
-            resultado="Piensa en cuidarte mas!";
-        }
-        console.log(resultado);
-        return resultado;
-    }    
-      
-    var sumavertor=function (){
-        var resultado=0;
-        var vector=[7,8,9,10];
-        for(i=0;i<vector.length;i++){
-            resultado+=vector[i];
-        }
-        return resultado;
-    };
-      
-    var sumavertor2=function (vector){
-        var resultado=0;        
-        for(i=0;i<vector.length;i++){
-            resultado+=vector[i];
-        }
-        return resultado;
-    };      
-      
-   function operacionesConCadena(){
-        var mensaje = "Hola Mundo";
-        var numeroLetras = mensaje.length; // numeroLetras = 10
-        console.log("El Tamaño de la cadena es:"+ numeroLetras);
-        var mensaje1 = "Hola";
-        var mensaje2 = " Mundo";
-        var mensaje = mensaje1 + mensaje2; // mensaje = "Hola Mundo“
-        console.log("Une 2 cadenas de texto:"+ mensaje);
-        var mensaje1 = "Hola";
-        var mensaje2 = mensaje1.concat(" Mundo"); // mensaje2 = "Hola Mundo“
-        console.log("Concatena:"+ mensaje2);
-        var variable1 = "Hola ";
-        var variable2 = 3;
-        var mensaje = variable1 + variable2; // mensaje = "Hola 3“
-        console.log("Concatena entre un numero y cadena:"+ mensaje);        
-        var mensaje1 = "Hola";
-        var mensaje2 = mensaje1.toUpperCase(); // mensaje2 = "HOLA"
-        console.log("Convierte mensaje en Mayuscula:"+ mensaje2);               
-   }   
-      
-   var operacioneConCadenaDos=function (){
-        var mensaje1 = "HolA";
-        var mensaje2 = mensaje1.toLowerCase(); // mensaje2 = "hola“
-        console.log("Convierte mensaje en minuscula:"+ mensaje2); 
-        var mensaje = "Hola";
-        var letra = mensaje.charAt(0); // letra = H
-        console.log("Extrae la caracter de la posición indicada:"+ letra); 
-        letra = mensaje.charAt(2); // letra = l
-        console.log("Extrae la caracter de la posición indicada:"+ letra); 
-        var mensaje = "Hola";
-        var posicion = mensaje.indexOf('a'); // posicion = 3
-        console.log("Indica la posición en la que esta ubicada: "+ posicion); 
-        posicion = mensaje.indexOf('b'); // posicion = -1
-        console.log("Indica la posición en la que esta ubicada (No existe): "+ posicion);         
-        var mensaje = "Hola Mundo";
-        var porcion = mensaje.substring(2); // porcion = "la Mundo"
-        console.log("Muestra cadena a partir de la posición indicada: "+ porcion);         
-        porcion = mensaje.substring(5); // porcion = "Mundo"
-        porcion = mensaje.substring(7); // porcion = "ndo“        
-        var mensaje = "Hola Mundo";
-        var porcion = mensaje.substring(-2); // porcion = "Hola Mundo“
-        console.log("Muestra cadena a partir de la posición indicada (Posición no existente): "+ porcion);         
-        var mensaje = "Hola Mundo";
-        var porcion = mensaje.substring(1, 8); // porcion = "ola Mun"
-        console.log("Muestra cadena entre las posiciones indicadas: "+ porcion);         
-        porcion = mensaje.substring(3, 4); // porcion = "a“        
-        var mensaje = "Hola Mundo";
-        var porcion = mensaje.substring(5, 0); // porcion = "Hola "
-        console.log("Muestra cadena entre las posiciones indicadas (pero al reves): "+ porcion);         
-        porcion = mensaje.substring(0, 5); // porcion = "Hola "       
-   };
-   
-   var operacionUsoSwitch=function (nombre, nivelEstudio){
-       
-        switch(parseInt(nivelEstudio)){
-           case 1: 
-            console.log(nombre+ " tiene el nivel de estudios de Inicial");
-            break;
-           case 2: 
-            console.log(nombre+ " tiene el nivel de estudios de Primaria");
-            break;
-           case 3: 
-            console.log(nombre+ " tiene el nivel de estudios de Secundaria");
-            break;
-           case 4: 
-            console.log(nombre+ " tiene el nivel de estudios de Universitario");
-            break;
-           default : 
-           console.log("Valor incorrecto");
-           break;
-       }
-       
-   };
-   
   </script>
   <style>
     div {
