@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="js/qrcode.js"></script>
+    <script type="text/javascript" src="js/html5-qrcode.js"></script>
+    <style type="text/css" media="screen">
+      body { text-align:center; }
+    </style>
+  </head>
+  <body>
+    <form name="QRform" id="QRform">
+      <textarea name="textField" rows="8" cols="70" onkeyup='updateQRCode(this.value)' onclick="this.focus();this.select();">UPeU</textarea>
+    </form>
+    
+    <!-- This is where our QRCode will appear in. -->
+    <div id="qrcode"></div>
+    <center><div id="qrcodeMach" style="border:1px solid blue; width: 80%"></div></center>
+  
+  
+  <script type="text/javascript">
+      function updateQRCode(text) {
+
+        var element = document.getElementById("qrcode");
+
+        //var bodyElement = document.body;
+        if(element.lastChild)
+          element.replaceChild(showQRCode(text), element.lastChild);
+        else
+          element.appendChild(showQRCode(text));
+
+      }
+      
+      function updateQRCodeMach(){          
+        var data=["42514741","54879854","54879832","54879854", "42514711","548798B4","548798A2","548798C4"];
+        
+        var element = document.getElementById("qrcodeMach");
+        var nuevoNodo = document.createElement('div');      
+        for(var i=0; i<data.length;i++){           
+            nuevoNodo.appendChild(showQRCode(data[i]));  
+            element.appendChild(nuevoNodo);
+        }      
+      }
+      updateQRCode('www.tutorialspoint.com');
+      updateQRCodeMach();
+    </script>
+  </body>
+</html>
