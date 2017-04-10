@@ -79,7 +79,7 @@
 
 
       //Crear Registro
-      todoDB.indexedDB.addTodo = function(todoText, dni) {
+      todoDB.indexedDB.addTodo = function(todoText, dni, telefono) {
         var db = todoDB.indexedDB.db;
         var trans = todoDB.indexedDB.db.transaction("todo", "readwrite");
         var store = trans.objectStore("todo");
@@ -87,7 +87,8 @@
         var data = {
           "text": todoText,
           "timeStamp": new Date().getTime(),
-          "dni": dni
+          "dni": dni,
+          "telefono":telefono
         };
 
         var request = store.put(data);
@@ -104,10 +105,13 @@
       function addTodo() {
         var todo = document.getElementById("todo");
         var dni = document.getElementById("dni");
+        var telefono = document.getElementById("telefono");
         if (todo.value.length > 0) {
-          todoDB.indexedDB.addTodo(todo.value, dni.value);
+          todoDB.indexedDB.addTodo(todo.value, dni.value, telefono.value);
           todo.value = "";
           dni.value = "";
+          telefono.value = "";
+          
         }  
       }      
 
@@ -157,7 +161,7 @@
         var todos = document.getElementById("todoItems");
         var li = document.createElement("li");
         var a = document.createElement("a");
-        var t = document.createTextNode(row.text+" - "+row.dni);
+        var t = document.createTextNode(row.text+" - "+row.dni+" - "+row.telefono);
 
         a.addEventListener("click", function() {
           todoDB.indexedDB.deleteTodo(row.timeStamp);
@@ -220,6 +224,7 @@
       <p>
         <input type="text" id="todo" name="todo" placeholder="Coloca tu nombre" />
         <input type="text" id="dni" name="dni" placeholder="Coloca tu dni" />
+        <input type="text" id="telefono" name="dni" placeholder="Coloca tu telefono" />
         <input type="submit" value="Agregar Item" id="addItem" />
       </p>
 

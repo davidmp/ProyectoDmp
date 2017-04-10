@@ -35,7 +35,13 @@ var dni = document.getElementById('dni');
 var telefono = document.getElementById('telefono');
 var idPersona = document.getElementById('idPersona');
 storeButton.addEventListener('click', function() {
-  agregarPersona(nombre.value, dni.value, telefono.value);
+    agregarPersona(nombre.value, dni.value, telefono.value);
+  /*if(idPersona==""){
+    agregarPersona(nombre.value, dni.value, telefono.value);
+  }else{
+   //actualizarPersona(nombre.value, dni.value, telefono.value, idPersona.value)   ;
+  }
+  */
 });
 
 var dataElement = document.getElementById('data');
@@ -57,7 +63,9 @@ function buscarPersona(text) {
       
       for (var i = 0; i !== numRows; ++i) {
         var rows= results.rows.item(i);
+        
         resulTRows+='<tr><td>' + rows.idPersona + '</td>'+'<td>' + rows.nombre + '</td>'+'<td>' + rows.dni + '</td>'+'<td>' + rows.telefono + '</td>'+'<td style="text-align: center"><a href="#" onclick="eliminarPersona('+rows.idPersona+')">X</a> <a href="#" onclick="editarPersona('+rows.idPersona+')">E</a> </td></tr>';        
+        console.log(resulTRows);
       }
       log(resulTRows);
     }, handleError);
