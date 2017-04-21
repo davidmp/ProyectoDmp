@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Administrar Persona</title>
+    <link rel="stylesheet" href="css/skeleton.css">
+<!--    <link rel="stylesheet" href="css/skeleton.min.css">-->
+    <style type="text/css">
+        .salir{
+            background: url('images/img/iconRed.png') no-repeat ;
+            text-decoration: none;
+         }
+         
+        .btnS{
+          border: none;
+          border-radius: 3px;
+          color: white;
+          padding: 30px;
+          font-size: 15px;
+          cursor: pointer;
+        }         
+    </style>
+  </head>
+  <body class="body_back_office">
+      
+        <h1 class="h1">Reporte de personas 
+            <img id = "nuevox" onclick="salirSistema()"  class="btnS salir" >       
+        </h1>
+      <div class="card" style="width: 65%">
+      <div class="menu">
+        <label class="nombre">Nombre: </label>
+        <label for="" class="icon">
+          <i class="fa fa-search i_search"></i>
+          <input id="search" class="search" type="search" name="" value="" placeholder="Search"  >
+        </label>
+        <label for="" class="l_buscar">
+          <input  id="search_button" class="button-primary" type="submit" name="" value="Buscar">
+        </label>
+        <label for="" class="l_nuevo">    
+            
+            <input type="button" id="nuevo" class="button-success" onclick="document.location.href='create_person.html'"   value="Nuevo">
+        </label>
+      </div>          
+      </div>  
+    <div class="card" style="width: 65%">
+
+      <div class="">
+        <div class="table">
+          <table>
+            <thead>
+              <tr>
+                <th><i class="fa fa-caret-down"></i>#</th>
+                <th><i class="fa fa-caret-down"></i>Nombre</th>
+                <th><i class="fa fa-caret-down"></i>Apellidos</th>
+                <th><i class="fa fa-caret-down"></i>DNI</th>
+                <th><i class="fa fa-caret-down"></i>Genero</th>
+                <th><i class="fa fa-caret-down"></i>Estado</th>
+                <th><i class="fa fa-caret-down"></i>Opciones</th>
+              </tr>
+            </thead>
+            <tbody id="table" >
+
+            </tbody>
+          </table>
+        </div>
+          <section class="" id="msgNoExiste">
+          <div class="panel">
+              <h2 class="panelTitulo">Título de panel</h2>
+            <p >No existe datos</p>
+          </div>          
+        </section>
+      </div>
+    </div>
+      <script type="text/javascript" src="js/db.js"></script>
+      <script type="text/javascript" src="js/operacionDB.js"></script>
+  </body>
+</html>
